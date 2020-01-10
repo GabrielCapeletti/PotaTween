@@ -57,7 +57,7 @@ public class PotaTweenPreset : ScriptableObject {
         this.transform = gameObject.transform;
 
         PotaTween potaTween = PotaTween.Create(this.gameObject, id);
-        potaTween.tag = Tag;
+        potaTween.Tag = Tag;
         potaTween.PlayOnEnable = PlayOnEnable;
         potaTween.PlayOnStart = PlayOnStart;
         potaTween.Duration = Duration;
