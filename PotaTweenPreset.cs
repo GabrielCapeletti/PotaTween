@@ -51,33 +51,35 @@ public class PotaTweenPreset : ScriptableObject {
     #endregion
 
     /** Creates a PotaTween component to play the preset */
-    public void Initialize(GameObject gameObject, int id)
+    public PotaTween Initialize(GameObject gameObject, int id = 0)
     {
         this.gameObject = gameObject;
         this.transform = gameObject.transform;
 
-        PotaTween potaTween = PotaTween.Create(this.gameObject, id);
-        potaTween.Tag = Tag;
-        potaTween.PlayOnEnable = PlayOnEnable;
-        potaTween.PlayOnStart = PlayOnStart;
-        potaTween.Duration = Duration;
-        potaTween.Speed = Speed;
-        potaTween.Delay = Delay;
-        potaTween.Loop = Loop;
-        potaTween.LoopsNumber = LoopsNumber;
-        potaTween.EasingReference = EasingReference;
-        potaTween.EaseEquation = EaseEquation;
-        potaTween.Curve = Curve;
-        potaTween.FlipCurveOnReverse = FlipCurveOnReverse;
+        PotaTween tween = PotaTween.Create(this.gameObject, id);
+        tween.Tag = Tag;
+        tween.PlayOnEnable = PlayOnEnable;
+        tween.PlayOnStart = PlayOnStart;
+        tween.Duration = Duration;
+        tween.Speed = Speed;
+        tween.Delay = Delay;
+        tween.Loop = Loop;
+        tween.LoopsNumber = LoopsNumber;
+        tween.EasingReference = EasingReference;
+        tween.EaseEquation = EaseEquation;
+        tween.Curve = Curve;
+        tween.FlipCurveOnReverse = FlipCurveOnReverse;
 
-        potaTween.Position = Position;
-        potaTween.Rotation = Rotation;
-        potaTween.Scale = Scale;
-        potaTween.Color = Color;
-        potaTween.Alpha = Alpha;
-        potaTween.Float = Float;
+        tween.Position = Position;
+        tween.Rotation = Rotation;
+        tween.Scale = Scale;
+        tween.Color = Color;
+        tween.Alpha = Alpha;
+        tween.Float = Float;
 
-        potaTween.onStart = onStart;
-        potaTween.onComplete = onComplete;
+        tween.onStart = onStart;
+        tween.onComplete = onComplete;
+
+        return tween;
     }
 }
